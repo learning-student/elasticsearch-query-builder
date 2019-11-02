@@ -1,0 +1,19 @@
+{
+    "name": "vserifsaglam/elasticsearch-query-builder",
+    "description": "elastic search query builder",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vserifsaglam",
+            "email": "vahit.serif119@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sheriff\\Elastic\\": "src/Elastic/"
+        }
+    }
+}
