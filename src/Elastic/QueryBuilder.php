@@ -38,7 +38,7 @@ class QueryBuilder
      * @param string $str String in camel case format
      * @return string $str Translated into underscore format
      */
-    private function fromCamelCase($str)
+    public function fromCamelCase($str)
     {
         $str[0] = strtolower($str[0]);
         return preg_replace_callback('/([A-Z])/', function ($c) {
@@ -76,6 +76,12 @@ class QueryBuilder
         $instance = new static();
 
         foreach ($arguments as $key => $argument) {
+            // if argument's null, skip it
+            if (!$argument) {
+                continue;
+            }
+
+
             $instance->addToQuery($key, $argument);
         }
 
@@ -89,6 +95,14 @@ class QueryBuilder
 
 
         foreach ($arguments as $key => $argument) {
+
+
+            // if argument's null, skip it
+            if (!$argument) {
+                continue;
+            }
+
+
             if ($argument instanceof QueryBuilder) {
 
                 $instance->setQuery(
@@ -164,7 +178,7 @@ class QueryBuilder
             $str[0] = strtoupper($str[0]);
         }
         return preg_replace_callback('/_([a-z])/', function ($c) {
-            return "_" . strtoupper($c[1]);
+            return strtoupper($c[1]);
         }, $str);
     }
 
