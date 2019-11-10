@@ -74,7 +74,6 @@ class FluentBuilder
                     $mapped[] = $argument->build(false);
 
                 }
-
             }
         }
 
