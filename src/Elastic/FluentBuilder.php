@@ -188,6 +188,7 @@ class FluentBuilder
         return $this;
     }
 
+
     /**
      * @param string $name
      * @param array $arguments
