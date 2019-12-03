@@ -6,7 +6,6 @@ php:
 
 
 install:
-  - composer require "${FRAMEWORK_VERSION}" --no-update -n
   - travis_retry composer install --no-suggest --prefer-dist -n -o
 
 
