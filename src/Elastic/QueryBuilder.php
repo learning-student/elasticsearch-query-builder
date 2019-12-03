@@ -53,10 +53,11 @@ class QueryBuilder
      */
     public function column(string $name, $value)
     {
-        return $this->{$this->toCamelCase($name)}([
-            $name
-        ]);
+        return $this->{$this->toCamelCase($name)}(
+            $value
+        );
     }
+
 
     /**
      * @param string $name
@@ -193,10 +194,13 @@ class QueryBuilder
 
     /**
      * @param array $query
+     * @return QueryBuilder
      */
-    public function setQuery(array $query)
+    public function setQuery(array $query) : QueryBuilder
     {
         $this->query = $query;
+
+        return $this;
     }
 
 }
