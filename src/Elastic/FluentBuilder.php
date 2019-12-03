@@ -49,18 +49,6 @@ class FluentBuilder
         return $mapped;
     }
 
-    /**
-     * @param array $arguments
-     * @return $this
-     */
-    private function buildMultiple($arguments)
-    {
-        $arguments = $this->mapArrayContent($arguments);
-
-
-        return [(new Multiple())->setQueries($arguments)];
-    }
-
 
     private function mapMultipleArguments(array $arguments)
     {
