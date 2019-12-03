@@ -2,9 +2,6 @@ language: php
 php:
   - "7.2"
 
-before_install:
-  - pecl install xdebug
-
 install:
   - travis_retry composer install --no-suggest --prefer-dist -n -o
 
