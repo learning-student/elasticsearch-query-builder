@@ -1,0 +1,19 @@
+language: php
+php:
+  - "7.0"
+  - "7.1"
+  - "7.2"
+
+
+install:
+  - composer require "${FRAMEWORK_VERSION}" --no-update -n
+  - travis_retry composer install --no-suggest --prefer-dist -n -o
+
+
+script:
+  - mkdir -p build/logs
+  - vendor/bin/phpunit tests --coverage-clover build/logs/clover.xml
+
+
+after_success:
+  - vendor/bin/php-coveralls -v

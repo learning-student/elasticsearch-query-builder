@@ -9,11 +9,15 @@
             "email": "vahit.serif119@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
             "Sheriff\\Elastic\\": "src/Elastic/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4",
+        "phpunit/php-code-coverage": "^7.0",
+        "php-coveralls/php-coveralls": "^2.2"
     }
 }
